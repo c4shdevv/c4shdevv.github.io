@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuaU Decompiler | Rat Labs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: url('https://source.unsplash.com/random/1920x1080/?abstract,blur') no-repeat center center/cover;
+            backdrop-filter: blur(10px);
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="h-screen text-white text-center flex flex-col justify-center items-center px-6">
+    <div class="fade-in text-center">
+        <h1 class="text-5xl font-bold drop-shadow-lg">LuaU Decompiler</h1>
+        <p class="text-xl mt-4 opacity-80">Powerful and sleek decompiler for Roblox scripts.</p>
+    </div>
+    
+    <div class="fade-in mt-10">
+        <h2 class="text-3xl font-semibold">🚀 Rat Labs - The Ultimate Script Hub</h2>
+        <p class="mt-2 opacity-70">Unlock powerful scripts for many games, all in one place.</p>
+        <a href="https://discord.gg/nahS6hnHrG" target="_blank" class="mt-5 inline-block px-6 py-3 bg-blue-500 hover:bg-blue-600 transition-all rounded-lg text-lg font-semibold">Join Rat Labs</a>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const elements = document.querySelectorAll(".fade-in");
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.1 });
+            elements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
